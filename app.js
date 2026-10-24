@@ -1,3 +1,9 @@
+// Inspect the real embedded runtime without loading configuration or starting the app.
+if (process.argv.includes('--runtime-info')) {
+    console.log(JSON.stringify({ applicationVersion: require('./package.json').version, node: process.versions.node, brotli: process.versions.brotli, openssl: process.versions.openssl }));
+    process.exit(0);
+}
+
 // CLI flags -- must be first, before any other require
 // Usage:  server.exe --v   OR   server.exe --version
 // Prints version info and exits without starting the server.
@@ -507,7 +513,7 @@ const startServer = async () => {
 
     await settingsService.load();
 
-    app.listen(PORT, () => {
+    app.listen(PORT, process.env.LOCAL_RELEASE_TEST_PORT ? '127.0.0.1' : undefined, () => {
         console.log(`Home Accounting server is running on port ${PORT}.`);
     });
 };

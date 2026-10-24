@@ -1,4 +1,4 @@
-﻿# Home Accounting
+# Home Accounting
 
 Home Accounting is a private household accounting web application based on the mature prior web application template. The application shell is reused for authentication, roles, audit logging, backoffice, reports, uploads/proofs, staging, backups, and Windows server compilation.
 
@@ -86,3 +86,8 @@ The compiled artifact is created under `dist/`. Copy the build package, environm
 # Project control
 
 Run `PROJECT-CONTROL.bat` as Administrator for the standard 24-option operational menu. The production runtime is the project-owned `0-CAMPEROS-ACCOUNTING` service. PostgreSQL remains an external dependency and is validated, but never stopped by this controller.
+
+
+## October 2026 Node security baseline
+
+Use patched Node 22.23.4, 24.22.1 or 26.12.1 on supported lines; run `npm run check:node-security` in the application package directory. Bundled Node/Electron must be updated separately. See the versioned security release notes.

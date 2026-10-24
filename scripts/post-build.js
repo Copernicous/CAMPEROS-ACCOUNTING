@@ -1,4 +1,4 @@
-﻿/**
+/**
  * post-build.js
  * Runs after the EXE is compiled. Copies all files needed on the
  * production server into dist/ so it is a self-contained package.
@@ -26,7 +26,6 @@ if (!fs.existsSync(distDir)) {
 }
 
 const filesToCopy = [
-    '.env',
     '.env.example',
     'CHANGELOG.md',
     'PRODUCTION_RELEASE_CHECKLIST.md',

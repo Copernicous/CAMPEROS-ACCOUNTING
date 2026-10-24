@@ -1,5 +1,13 @@
 # Home Accounting Changelog
 
+## [0.4.5] - 2026-10-23
+
+### Security
+
+- Require the October 21 patched Node runtime baseline; include a configuration-free runtime check and patched build/runtime requirements.
+- Refresh compatible dependency security fixes. Runtime and dependency validation evidence is retained with the local release.
+- No production installation or business-data changes.
+
 ## 0.4.3 - 2026-07-02
 
 - Added transaction CSV staging normalization that matches accounts/categories, infers transaction types, applies merchant/category suggestions, and records ready/error row states without auto-posting ledger data.

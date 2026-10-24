@@ -1,9 +1,8 @@
 name: Release
 
 on:
-  push:
-    tags:
-      - 'v*'
+  # Verified local builds are required; hosted execution needs explicit authorization.
+  workflow_dispatch:
 
 permissions:
   contents: write

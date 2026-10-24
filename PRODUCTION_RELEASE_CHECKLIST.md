@@ -18,14 +18,14 @@ Use this list every time a new production version is compiled, tagged, uploaded 
 - [ ] Add a top entry to `CHANGELOG.md`.
 - [ ] Add tag-specific GitHub release notes at `.github/releases/v<version>.md`.
 - [ ] Confirm `.env.example` contains any new safe, non-secret config keys.
-- [ ] Confirm the real `.env` exists on the build machine and production machine, but is not committed to Git.
+- [ ] Keep real `.env` files out of the clean release checkout and package; preserve the production configuration during installation.
 
 ## Build Package
 
 - [ ] Run `npm run build:exe`.
 - [ ] Confirm `dist/server.exe` exists.
 - [ ] Confirm `dist/server-update-<version>.zip` exists.
-- [ ] Confirm the zip opens and includes `server.exe`, `.env`, `.env.example`, `CHANGELOG.md`, `RELEASE_NOTES-v<version>.md`, `PRODUCTION_RELEASE_CHECKLIST.md`, `Home-Accounting-Manager.bat`, `OPERATIONS_MANUAL.md`, `DEFERRED-ITEMS.txt`, `install-service.ps1`, and `uninstall-service.ps1`.
+- [ ] Confirm the zip opens and includes `server.exe`, `.env.example`, `CHANGELOG.md`, `RELEASE_NOTES-v<version>.md`, `PRODUCTION_RELEASE_CHECKLIST.md`, `Home-Accounting-Manager.bat`, `OPERATIONS_MANUAL.md`, `DEFERRED-ITEMS.txt`, `install-service.ps1`, and `uninstall-service.ps1`.
 
 ## Local Validation
 
@@ -40,7 +40,7 @@ Use this list every time a new production version is compiled, tagged, uploaded 
 - [ ] Create the matching tag: `git tag v<version>`.
 - [ ] Push the branch: `git push origin main`.
 - [ ] Push the tag: `git push origin v<version>`.
-- [ ] Confirm the GitHub Actions release workflow runs on the new tag.
+- [ ] Run and pass the project-specific checks and packaging locally; keep hosted workflows disabled.
 - [ ] Confirm the GitHub Release body uses `.github/releases/v<version>.md`.
 
 ## Production Upload
